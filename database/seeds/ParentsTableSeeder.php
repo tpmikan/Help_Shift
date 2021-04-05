@@ -12,7 +12,7 @@ class ParentsTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('parent_admins')->insert([
+        DB::table('parents')->insert([
             'name' => 'parent',
             'email' => 'parent@help.com',
             'password' => Hash::make('parent'),

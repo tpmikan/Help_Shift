@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParentAdminsTable extends Migration
+class CreateParentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateParentAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('parent_admins', function (Blueprint $table) {
+        Schema::create('parents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
@@ -31,6 +31,6 @@ class CreateParentAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parent_admins');
+        Schema::dropIfExists('parents');
     }
 }

@@ -12,7 +12,7 @@ class ParentAdmin extends Authenticatable
     //
     use Notifiable;
     
-    protected $table = 'parent_admins';
+    protected $table = 'parents'; // tableを指定
 
     /**
      * The attributes that are mass assignable.
