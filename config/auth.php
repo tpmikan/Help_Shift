@@ -2,6 +2,8 @@
 
 return [
 
+    'table' => 'parent_admins',
+    
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -15,7 +17,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'parent_admins',
     ],
 
     /*
@@ -38,12 +40,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'parent_admins',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'parent_admins',
             'hash' => false,
         ],
     ],
@@ -66,9 +68,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'parent_admins' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\ParentAdmin::class,
         ],
 
         // 'users' => [
@@ -93,8 +95,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'parent_admins' => [
+            'provider' => 'parent_admins',
             'table' => 'password_resets',
             'expire' => 60,
         ],
