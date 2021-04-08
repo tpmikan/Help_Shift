@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Child\Auth;
 
 use App\ParentAdmin;
 use App\Http\Controllers\Controller;

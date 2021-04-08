@@ -1,8 +1,6 @@
 <?php
 
 return [
-
-    'table' => 'parent_admins',
     
     /*
     |--------------------------------------------------------------------------
@@ -16,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'parent_admins',
+        'guard' => 'child',
+        'passwords' => 'children',
     ],
 
     /*
@@ -40,14 +38,29 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'parent_admins',
+            'provider' => 'parents',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'parent_admins',
+            'provider' => 'parents',
             'hash' => false,
         ],
+        
+        'parent' => [
+            'driver' => 'session',
+            'provider' => 'parents',
+        ],
+        
+        'child' => [
+            'driver' => 'session',
+            'provider' => 'children',
+        ],
+        
+        'child-api' => [
+            'driver' => 'token',
+            'provider' => 'children',
+     ],
     ],
 
     /*
@@ -68,11 +81,15 @@ return [
     */
 
     'providers' => [
-        'parent_admins' => [
+        'parents' => [
             'driver' => 'eloquent',
             'model' => App\ParentAdmin::class,
         ],
-
+        
+        'children' => [
+            'driver' => 'eloquent',
+            'model' => App\Child::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -95,11 +112,17 @@ return [
     */
 
     'passwords' => [
-        'parent_admins' => [
-            'provider' => 'parent_admins',
+        'parents' => [
+            'provider' => 'parents',
             'table' => 'password_resets',
             'expire' => 60,
         ],
+        
+        'children' => [
+            'provider' => 'children',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ]
     ],
 
 ];
