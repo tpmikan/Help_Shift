@@ -20,6 +20,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'parent', 'middleware' => 'auth:parent'], function(){
   Route::get('home', 'Admin\ParentController@index'); 
   Route::post('logout', 'Admin\Auth\LoginController@logout')->name('parent.logout');
+  Route::get('children', 'Admin\ParentController@children');
+  Route::get('children/add', 'Admin\ParentController@add');
+  Route::post('children/add', 'Admin\ParentController@childrenAdd');
 
 });
 Route::group(['prefix' => 'parent'], function(){

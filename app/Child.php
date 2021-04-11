@@ -39,4 +39,13 @@ class Child extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public static $rules = array (
+      'set_id' => 'required',
+      'name' => 'required',
+      'password' => 'required',
+      'birthday' => 'required',
+      'basic_price' => 'required',
+      'reward_price' => 'required',
+      );
 }

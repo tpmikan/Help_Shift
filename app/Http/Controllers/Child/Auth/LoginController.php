@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/child/home';
+    protected $redirectTo = '/home';
     
     public function showLoginForm()
     {
