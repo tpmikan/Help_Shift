@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*全体*/
+
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+}
+
+#yearAndMonth {
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+  margin: 1rem 0 0;
+}
+
+/*カレンダー*/
+
+#calendar {
+  text-align: center;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  color: #000;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/*日曜日*/
+
+td:first-child {
+  color: red;
+}
+
+/*土曜日*/
+
+td:last-child {
+  color: blue;
+}
+
+/*前後月の日付*/
+
+td.disabled {
+  color: #fff;
+}
+
+/*本日*/
+
+td.today {
+  background-color: #ff9900;
+  color: #fff;
+}
+

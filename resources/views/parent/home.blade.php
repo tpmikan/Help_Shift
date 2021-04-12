@@ -5,6 +5,24 @@
 @section('content')
 
     <h1>Parent Home</h1>
+    <!-- カレンダー-->
+    <div class="container">
+      <div class="row align-items-end">
+        <div class="col-3 mx-auto">
+          <button id="previous" class="btn btn-success btn-block">＜　前月</button>
+        </div>
+        <div class="col-4 mx-auto">
+          <h4 id="yearAndMonth"></h4>
+        </div>
+        <div class="col-3 mx-auto">
+  　  　    <button id="next" class="btn btn-success btn-block">次月　＞</button>
+        </div>
+      </div>
+      <div class="col-9 mx-auto mb-5">
+  　  　  <div id="calendar"></div>
+      </div>
+    </div>
+    
     
     <div class="container-fluid">
       <div class="row">
