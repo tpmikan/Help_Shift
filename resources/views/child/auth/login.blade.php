@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <a href="{{ action('Admin\Auth\LoginController@showLoginForm') }}" class="text-white">■</a>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

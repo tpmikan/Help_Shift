@@ -17,7 +17,7 @@ class ParentController extends Controller
     
     public function index() 
     {
-      return view('parent.home');
+        return view('parent.home');
     }
     
     public function children()
