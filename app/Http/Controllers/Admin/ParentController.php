@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Child;
+use App\Help;
+use Carbon\Carbon;
 
 class ParentController extends Controller
 {
@@ -30,7 +32,12 @@ class ParentController extends Controller
         return view('parent.children_add');
     }
     
-    protected function childrenAdd(Request $request)
+    public function showHelpCreate()
+    {
+        return view('parent.help_create');
+    }
+    
+    public function childrenAdd(Request $request)
     {
         $this->validate($request, Child::$rules);
         
@@ -45,5 +52,18 @@ class ParentController extends Controller
         $child->save();
         
         return redirect('/parent/children');
+    }
+    
+    public function helpCreate(Request $request)
+    {
+        $help_content = $request->input('help_content');
+        
+        for($day = new Carbon($request->help_start); $day <= new Carbon($request->help_end); $day->addDay()){
+            Help::create(["help_day"=>$day, "help_content"=>$help_content]);    
+        }         
+        
+    
+        
+        return redirect('/parent/help/create');
     }
 }
