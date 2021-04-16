@@ -17,6 +17,9 @@
   </head>
   <body>  
     <div>
+      <div class="col-2 my-4">
+        <a href="{{ action('Admin\ParentController@index') }}" role="button" class="btn btn-info btn-block">Home</a>
+      </div>
       
       <main>
         @yield('content')
