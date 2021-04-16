@@ -30,6 +30,8 @@ Route::group(['prefix' => 'parent', 'middleware' => 'auth:parent'], function(){
   Route::post('children/add', 'Admin\ParentController@childrenAdd');
   Route::get('help/create', 'Admin\ParentController@showHelpCreate');
   Route::post('help/create', 'Admin\ParentController@helpCreate');
+  Route::get('help/delete', 'Admin\ParentController@showHelpDelete');
+  Route::get('delete', 'Admin\ParentController@helpDelete');
 });
 
 

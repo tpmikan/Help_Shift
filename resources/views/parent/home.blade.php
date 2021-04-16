@@ -35,7 +35,7 @@
           <a href="{{ action('Admin\ParentController@showHelpCreate') }}" role="button" class="btn btn-primary btn-block">お手伝い作成</a>
         </div>
         <div class="col-3 px-1 pb-1">
-          <a href="" role="button" class="btn btn-primary btn-block">お手伝い削除</a>
+          <a href="{{ action('Admin\ParentController@showHelpDelete') }}" role="button" class="btn btn-primary btn-block">お手伝い削除</a>
         </div>
         <div class="col-3 px-1 pb-1">
           <a href="" role="button" class="btn btn-primary btn-block">承認画面</a>

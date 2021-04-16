@@ -27,14 +27,10 @@ class ParentController extends Controller
         return view('parent.children');
     }
     
+    //メンバー作成
     public function add()
     {
         return view('parent.children_add');
-    }
-    
-    public function showHelpCreate()
-    {
-        return view('parent.help_create');
     }
     
     public function childrenAdd(Request $request)
@@ -54,6 +50,12 @@ class ParentController extends Controller
         return redirect('/parent/children');
     }
     
+    //お手伝い作成
+    public function showHelpCreate()
+    {
+        return view('parent.help_create');
+    }
+    
     public function helpCreate(Request $request)
     {
         $help_content = $request->input('help_content');
@@ -66,4 +68,21 @@ class ParentController extends Controller
         
         return redirect('/parent/help/create');
     }
+    
+    //お手伝い削除
+    public function showHelpDelete()
+    {
+        $helps = Help::all();
+        
+        return view('parent.help_delete', compact("helps"));
+    }
+    
+    public function helpDelete(Request $request)
+    {
+        $help = Help::find($request->id);
+        $help->delete();
+        
+        return redirect('/parent/help/delete');
+    }
+    
 }

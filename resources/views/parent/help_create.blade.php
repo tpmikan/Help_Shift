@@ -1,6 +1,6 @@
 @extends('layouts.parent')
 
-@section('title', 'お手伝い　作成')
+@section('title', 'お手伝い作成')
 
 @section('content')
 
