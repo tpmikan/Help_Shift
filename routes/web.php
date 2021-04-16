@@ -40,8 +40,11 @@ Route::group(['prefix' => 'parent', 'middleware' => 'auth:parent'], function(){
 Route::get('login', 'Child\Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Child\Auth\LoginController@login');
 
-Route::get('home', 'Child\ChildController@index')->middleware('auth:child'); 
-Route::post('logout', 'Child\Auth\LoginController@logout')->middleware('auth:child')->name('logout');
-  
+Route::group(['middleware' => 'auth:parent'], function(){
+  Route::get('home', 'Child\ChildController@index'); 
+  Route::post('logout', 'Child\Auth\LoginController@logout')->name('logout');
+  Route::get('help', 'Child\ChildController@showHelp');
+  Route::get('request', 'Child\ChildController@help');
+});
   
   

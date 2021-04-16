@@ -1,9 +1,9 @@
 @extends('layouts.child')
 
-@section('title', 'Home')
+@section('title', 'ホーム')
 
 @section('content')
-    <h1>Home</h1>
+    <h1>ホーム</h1>
      <!-- カレンダー-->
     <div class="container">
       <div class="row align-items-end">
@@ -27,7 +27,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-3 px-1 pb-1">
-          <a href="" role="button" class="btn btn-primary btn-block">お手伝いをする</a>
+          <a href="{{ action('Child\ChildController@showHelp') }}" role="button" class="btn btn-primary btn-block">お手伝いをする</a>
         </div>
         <div class="col-3 px-1 pb-1">
           <a href="" role="button" class="btn btn-primary btn-block">お手伝いのキャンセル</a>

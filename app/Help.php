@@ -8,4 +8,9 @@ class Help extends Model
 {
     //
     protected $fillable = ['help_day', 'help_content'];
+    
+    public function childHelp()
+    {
+        return $this->hasMany('App\ChildHelp');
+    }
 }
