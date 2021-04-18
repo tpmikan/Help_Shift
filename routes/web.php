@@ -48,6 +48,8 @@ Route::group(['middleware' => 'auth:parent'], function(){
   Route::post('logout', 'Child\Auth\LoginController@logout')->name('logout');
   Route::get('help', 'Child\ChildController@showHelp');
   Route::get('request', 'Child\ChildController@help');
+  Route::get('help/cancel', 'Child\ChildController@showCancel');
+  Route::get('cancel', 'Child\ChildController@cancel');
 });
   
   
