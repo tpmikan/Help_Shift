@@ -27,7 +27,7 @@ class ChildController extends Controller
     {
         $helps = Help::all();
         
-        return view('child.help', compact("helps"));
+        return view('child.request', compact("helps"));
     }
     
     public function help(Request $request)
@@ -42,6 +42,6 @@ class ChildController extends Controller
         
         $help->save();
         
-        return redirect('/help');
+        return redirect('/request');
     }
 }
