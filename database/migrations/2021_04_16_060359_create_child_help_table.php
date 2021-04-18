@@ -17,7 +17,7 @@ class CreateChildHelpTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('child_id');
             $table->bigInteger('help_id');
-            $table->integer('approval_status');
+            $table->integer('approval_status');// 1 => 未承認, 2 => 承認
             $table->timestamps();
         });
     }

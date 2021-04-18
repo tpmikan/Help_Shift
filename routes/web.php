@@ -32,6 +32,9 @@ Route::group(['prefix' => 'parent', 'middleware' => 'auth:parent'], function(){
   Route::post('help/create', 'Admin\ParentController@helpCreate');
   Route::get('help/delete', 'Admin\ParentController@showHelpDelete');
   Route::get('delete', 'Admin\ParentController@helpDelete');
+  Route::get('approval', 'Admin\ParentController@showApproval');
+  Route::get('helpApproval', 'Admin\ParentController@approval');
+  Route::get('helpRejected', 'Admin\ParentController@rejected');
 });
 
 

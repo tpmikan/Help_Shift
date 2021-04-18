@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Child;
 use App\Help;
+use App\ChildHelp;
 use Carbon\Carbon;
 
 class ParentController extends Controller
@@ -83,6 +84,40 @@ class ParentController extends Controller
         $help->delete();
         
         return redirect('/parent/help/delete');
+    }
+    
+    //承認画面
+    public function showApproval()
+    {
+        $child_helps = ChildHelp::all();
+        $unapproveds = [];
+        
+        foreach($child_helps as $help){
+            if($help->approval_status == 1){
+                $unapproveds[] = $help;
+            }
+        }
+        
+        return view('parent.approval',compact("unapproveds", "day"));
+    }
+    
+    public function approval(Request $request)
+    {
+        $approval = ChildHelp::find($request->id);
+        
+        $approval->approval_status = 2;
+        $approval->save();
+        
+        return redirect('/parent/approval');
+    }
+    
+    public function rejected(Request $request)
+    {
+        $rejected = ChildHelp::find($request->id);
+        
+        $rejected->delete();
+        
+        return redirect('/parent/approval');
     }
     
 }
