@@ -23,14 +23,17 @@ class ParentController extends Controller
         return view('parent.home');
     }
     
+    //メンバー管理
     public function children()
     {
-        return view('parent.children');
+        $children = Child::all();
+        
+        return view('parent.children', compact("children"));
     }
     
-    //メンバー作成
     public function add()
     {
+        
         return view('parent.children_add');
     }
     
@@ -47,6 +50,34 @@ class ParentController extends Controller
         $child->reward_price = $request->input('reward_price');
         
         $child->save();
+        
+        return redirect('/parent/children');
+    }
+    
+    public function showMemberEdit(Request $request)
+    {
+        $child = Child::find($request->id);
+        
+        return view('parent.member_edit',compact("child"));
+    }
+    
+    public function memberEdit(Request $request)
+    {
+        $child = Child::find($request->id);
+        
+        $child->basic_price = $request->basic_price;
+        $child->reward_price = $request->reward_price;
+        
+        $child->save();
+        
+        return redirect('/parent/children');
+    }
+    
+    public function memberDelete(Request $request)
+    {
+        $child = Child::find($request->id);
+        
+        $child->delete();
         
         return redirect('/parent/children');
     }
