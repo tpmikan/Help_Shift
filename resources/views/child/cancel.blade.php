@@ -38,7 +38,7 @@
           <tbody>
             @foreach ($unapproveds as $help)
               <tr>
-                <td>{{ date('y年m月d日',strtotime($help->created_at)) }}</td>
+                <td class="text-body">{{ date('y年m月d日',strtotime($help->created_at)) }}</td>
                 <td>{{ date('Y年m月d日',strtotime($help->help->help_day)) }}</th>
                 <td>{{ $help->help->help_content }}</td>
                 <td>

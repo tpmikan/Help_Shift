@@ -38,11 +38,11 @@
           <tbody>
             @foreach ($helps as $help)
               <tr>
-                <td>{{ date('Y年m月d日',strtotime($help->help_day)) }}</th>
+                <td class="text-body">{{ date('Y年m月d日',strtotime($help->help_day)) }}</th>
                 <td>{{ $help->help_content }}</td>
                 <td>
                   <div>
-                    <a href="{{ action('Admin\ParentController@helpDelete', ['id' => $help->id]) }}">削除</a>
+                    <a href="{{ action('Admin\ParentController@helpDelete', ['id' => $help->id]) }}" role="button" class="btn btn-primary">削除</a>
                   </div>
                 </td>
               </tr>

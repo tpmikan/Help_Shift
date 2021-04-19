@@ -41,7 +41,7 @@
           <tbody>
             @foreach ($unapproveds as $unapproved)
               <tr>
-                <td>{{ date('Y年m月d日',strtotime($unapproved->created_at)) }}</th>
+                <td class="text-body">{{ date('Y年m月d日',strtotime($unapproved->created_at)) }}</th>
                 <td>{{ $unapproved->child->name }}</td>
                 <td>{{ date('Y年m月d日',strtotime($unapproved->help->help_day))}}</td>
                 <td>{{ $unapproved->help->help_content }}</td>
