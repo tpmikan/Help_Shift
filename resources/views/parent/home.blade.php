@@ -49,7 +49,7 @@
           <a href="" role="button" class="btn btn-primary btn-block">お小遣い明細 確認</a>
         </div>
         <div class="col-3 px-1 pb-1">
-          <a href="" role="button" class="btn btn-primary btn-block">設定</a>
+          <a href="{{ action('Admin\ParentController@showSet') }}" role="button" class="btn btn-primary btn-block">設定</a>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Child;
 use App\Help;
 use App\ChildHelp;
+use App\Set;
 use Carbon\Carbon;
 
 class ParentController extends Controller
@@ -149,6 +150,26 @@ class ParentController extends Controller
         $rejected->delete();
         
         return redirect('/parent/approval');
+    }
+    
+    
+    
+    //設定
+    public function showSet()
+    {
+        $sets = Set::all();
+        
+        return view('parent.set', compact("sets"));
+    }
+    
+    public function set(Request $request)
+    {
+        $set = Set::find($request->id);
+        
+        $set->magnification = $request->magnification;
+        $set->save();
+        
+        return redirect('/parent/set');
     }
     
 }
