@@ -49,8 +49,8 @@ class Child extends Authenticatable
       'reward_price' => 'required',
     );
       
-    public function childHelp()
+    public function help()
     {
-        return $this->hasMany('App\ChildHelp');
+        return $this->belongsToMany('App\Help')->using('App\ChildHelp');
     }
 }
