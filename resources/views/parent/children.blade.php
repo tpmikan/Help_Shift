@@ -23,7 +23,7 @@
             @foreach ($children as $child)
               <tr>
                 <td class="text-body">{{ $child->name }}</td>
-                <td>{{ date('Y年m月d日',strtotime($child->birthday)) }}</th>
+                <td>{{ date('Y年m月d日',strtotime($child->birthday)) }}</td>
                 <td>{{ $child->basic_price }}</td>
                 <td>{{ $child->reward_price }}</td>
                 <td>

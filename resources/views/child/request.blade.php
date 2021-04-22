@@ -37,10 +37,10 @@
           <tbody>
             @foreach ($helps as $help)
               <tr>
-                <td class="text-body">{{ date('Y年m月d日',strtotime($help->help_day)) }}</th>
+                <td class="text-body">{{ date('Y年m月d日',strtotime($help->help_day)) }}</td>
                 <td>{{ $help->help_content }}</td>
                 <td>
-                  <a href="{{ action('Child\ChildController@help', ['id' => $help->id]) }}"　role="button" class="btn btn-primary">お手伝い申請</a>
+                  <a href="{{ action('Child\ChildController@help', ['id' => $help->id]) }}" role="button" class="btn btn-primary">お手伝い申請</a>
                 </td>
               </tr>
             @endforeach

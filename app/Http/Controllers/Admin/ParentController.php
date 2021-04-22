@@ -130,7 +130,7 @@ class ParentController extends Controller
             }
         }
         
-        return view('parent.approval',compact("unapproveds", "day"));
+        return view('parent.approval',compact("unapproveds"));
     }
     
     public function approval(Request $request)
