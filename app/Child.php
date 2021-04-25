@@ -53,4 +53,9 @@ class Child extends Authenticatable
     {
         return $this->belongsToMany('App\Help')->using('App\ChildHelp');
     }
+    
+    public function set()
+    {
+        return $this->belongsTo('App\Set','set_id','base_year');
+    }
 }

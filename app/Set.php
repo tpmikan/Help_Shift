@@ -8,4 +8,9 @@ class Set extends Model
 {
     //
     protected $fillable = ['magnification'];
+    
+    public function child()
+    {
+        return $this->hasMany('App\Child');
+    }
 }
