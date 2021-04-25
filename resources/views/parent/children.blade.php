@@ -7,7 +7,7 @@
     <h1>メンバー管理画面</h1>
     
     <div class="container">
-      <div class="col-10 py-2">
+      <div class="col-12 py-2">
         <table class="table table-striped">
           <thead>
             <tr>
@@ -24,8 +24,8 @@
               <tr>
                 <td class="text-body">{{ $child->name }}</td>
                 <td>{{ date('Y年m月d日',strtotime($child->birthday)) }}</td>
-                <td>{{ $child->basic_price }}</td>
-                <td>{{ $child->reward_price }}</td>
+                <td>{{ $child->basic_price }} ( × {{ $child->set->magnification}} )</td>
+                <td>{{ $child->reward_price }} ( × {{ $child->set->magnification}} )</td>
                 <td>
                   <div>
                     <a href="{{ action('Admin\ParentController@showMemberEdit', ['id' => $child->id]) }}" role="button" class="btn btn-primary">編集</a>
