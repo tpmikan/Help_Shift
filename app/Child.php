@@ -41,7 +41,6 @@ class Child extends Authenticatable
     ];
     
     public static $rules = array (
-      'set_id' => 'required',
       'name' => 'required',
       'password' => 'required',
       'birthday' => 'required',
@@ -56,6 +55,6 @@ class Child extends Authenticatable
     
     public function set()
     {
-        return $this->belongsTo('App\Set','set_id','base_year');
+        return $this->belongsTo('App\Set','set_base_year','base_year');
     }
 }

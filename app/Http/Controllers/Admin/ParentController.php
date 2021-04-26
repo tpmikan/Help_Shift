@@ -43,12 +43,12 @@ class ParentController extends Controller
         $this->validate($request, Child::$rules);
         
         $child = new Child;
-        $child->set_id = $request->input('set_id');
         $child->name = $request->input('name');
         $child->password = Hash::make($request->input('password'));
         $child->birthday = $request->input('birthday');
         $child->basic_price = $request->input('basic_price');
         $child->reward_price = $request->input('reward_price');
+        $child->set_base_year = parent::gradeCalculation($child->birthday);
         
         $child->save();
         

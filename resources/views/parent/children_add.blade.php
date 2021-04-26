@@ -16,12 +16,6 @@
           </ul>
         @endif
         <div class="form-group row">
-          <label class="col-2 text-center">学年</label>
-          <div class="col-6">
-            <input type="number" class="form-control" name="set_id">
-          </div>
-        </div>
-        <div class="form-group row">
           <label class="col-2 text-center">名前</label>
           <div class="col-6">
             <input type="text" class="form-control" name="name">
