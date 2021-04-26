@@ -21,6 +21,13 @@ class ParentController extends Controller
     
     public function index() 
     {
+        //学年を計算
+        $children = Child::all();
+        foreach($children as $child){
+            $child->set_base_year = parent::gradeCalculation($child->birthday);
+            $child->save();
+        }
+        
         return view('parent.home');
     }
     
