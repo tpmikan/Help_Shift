@@ -33,14 +33,16 @@ class ChildController extends Controller
     public function help(Request $request)
     {
         $help = new ChildHelp;
+        $child_id = Auth::id();
+        $help_id = $request->id;
         
-        $help->child_id = Auth::id();
-        $help->help_id = $request->id;
+        $help->child_id = $child_id;
+        $help->help_id = $help_id;
         $help->approval_status = 1;
         
         $help->save();
         
-        return redirect('/help');
+        return redirect('/request');
     }
     
     //お手伝いのキャンセル
