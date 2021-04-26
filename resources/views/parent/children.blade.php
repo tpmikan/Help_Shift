@@ -13,8 +13,9 @@
             <tr>
               <th width="15%">名前</th>
               <th width="15%">誕生日</th>
-              <th width="25%">基本お小遣い(×学年倍率)</th>
-              <th width="25%">お手伝い単価（×学年倍率）</th>
+              <th width="10%">学年</th>
+              <th width="20%">基本お小遣い(×学年倍率)</th>
+              <th width="20%">お手伝い単価（×学年倍率）</th>
               <th width="10%">編集</th>
               <th width="10%">削除</th>
             </tr>
@@ -24,6 +25,7 @@
               <tr>
                 <td class="text-body">{{ $child->name }}</td>
                 <td>{{ date('Y年m月d日',strtotime($child->birthday)) }}</td>
+                <td>{{ $child->set->grade }}</td>
                 <td>{{ $child->basic_price }} ( × {{ $child->set->magnification}} )</td>
                 <td>{{ $child->reward_price }} ( × {{ $child->set->magnification}} )</td>
                 <td>

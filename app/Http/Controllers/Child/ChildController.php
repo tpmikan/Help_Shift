@@ -49,7 +49,7 @@ class ChildController extends Controller
         
         $help->save();
         
-        return redirect('/request');
+        return redirect('/help');
     }
     
     //お手伝いのキャンセル
