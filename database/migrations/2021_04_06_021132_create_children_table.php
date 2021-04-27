@@ -21,6 +21,7 @@ class CreateChildrenTable extends Migration
             $table->date('birthday');
             $table->integer('basic_price');
             $table->integer('reward_price');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
