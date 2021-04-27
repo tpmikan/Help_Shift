@@ -25,6 +25,14 @@
       </div>
     </div>
     
+    @if (count($errors) > 0)
+      <ul>
+        @foreach ($errors->all() as $e)
+          <li>{{ $e }}</li>
+        @endforeach
+      </ul>
+    @endif
+    
     <div class="container">
       <form action="{{ action('Admin\ParentController@helpCreate') }}" method="post">
         <div class="row pb-3">

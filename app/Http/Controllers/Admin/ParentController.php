@@ -98,6 +98,8 @@ class ParentController extends Controller
     
     public function helpCreate(Request $request)
     {
+        $this->validate($request, Help::$rules);
+        
         $help_content = $request->input('help_content');
         
         for($day = new Carbon($request->help_start); $day <= new Carbon($request->help_end); $day->addDay()){
