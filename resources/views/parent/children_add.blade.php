@@ -41,7 +41,7 @@
           <p>円</p>
         </div>
         <div class="form-group row">
-          <label class="col-2 text-center">お小遣い単価</label>
+          <label class="col-2 text-center">お手伝い単価</label>
           <div class="col-6">
             <input type="number" class="form-control" name="reward_price">
           </div>
