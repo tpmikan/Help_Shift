@@ -152,7 +152,7 @@ return [
         'basic_price' => '基本お小遣い',
         'reward_price' => 'お手伝い単価',
         'help_content' => 'お手伝い内容',
-        'help_day' => 'お手伝い日',
+        
         
     ],
 

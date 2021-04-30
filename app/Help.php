@@ -11,7 +11,8 @@ class Help extends Model
     
     public static $rules = array (
       'help_content' => 'required',
-      'help_day' => 'required',
+      'help_start' => 'required',
+      'help_end' => 'required',
     );
     
     public function child()
