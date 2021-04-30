@@ -32,7 +32,7 @@ class ChildController extends Controller
     //お手伝いする
     public function showHelp()
     {
-        $helps = Help::all();
+        $helps = Auth::user()->getUnappliedHelps();
         
         return view('child.request', compact("helps"));
     }

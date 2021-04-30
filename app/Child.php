@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 
 class Child extends Authenticatable
@@ -56,5 +57,20 @@ class Child extends Authenticatable
     public function set()
     {
         return $this->belongsTo('App\Set','set_base_year','base_year');
+    }
+    
+    public function getUnappliedHelps()
+    {
+        $applied_help_ids = DB::table('child_help')
+                            ->where('child_id', '=', $this->id)
+                            ->pluck('help_id')
+                            ->all();
+                            
+        
+                            
+        return DB::table('helps')
+                ->whereNotIn('id', $applied_help_ids)
+                ->select('id', 'help_day', 'help_content')
+                ->get();
     }
 }
