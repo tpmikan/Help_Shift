@@ -161,7 +161,26 @@ class ParentController extends Controller
         return redirect('/parent/approval');
     }
     
+    //お小遣い　計算
+    public function showCalculation()
+    {
+        $children = Child::all();
+        
+        return view('parent.calculation', compact("children"));
+    }
     
+    public function calculation(Request $request)
+    {
+        $help_year = date('Y', strtotime($request->input('help_month')));
+        $help_month = date('m', strtotime($request->input('help_month')));
+        
+        $child = Child::find($request->input('child_name'));
+        $helps_count = $child->getHelpsCount($help_year, $help_month);//お手伝い日数の計算
+        
+        $total_price = ($child->basic_price * $child->set->magnification) + ($child->reward_price * $child->set->magnification * $helps_count);//お小遣いの合計金額
+        
+        return view('parent.help_money', compact("child", "helps_count", "total_price"));
+    }
     
     //設定
     public function showSet()

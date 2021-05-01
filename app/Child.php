@@ -66,11 +66,20 @@ class Child extends Authenticatable
                             ->pluck('help_id')
                             ->all();
                             
-        
-                            
         return DB::table('helps')
                 ->whereNotIn('id', $applied_help_ids)
                 ->select('id', 'help_day', 'help_content')
                 ->get();
+    }
+    
+    public function getHelpsCount($help_year, $help_month)
+    {
+        return DB::table('child_help')
+                ->leftJoin('helps', 'child_help.help_id', '=', 'helps.id')
+                ->where('child_id', '=', $this->id)
+                ->where('approval_status', '=', 2)
+                ->whereYear('help_day', '=', $help_year)
+                ->whereMonth('help_day', '=', $help_month)
+                ->count();
     }
 }

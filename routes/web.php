@@ -38,6 +38,8 @@ Route::group(['prefix' => 'parent', 'middleware' => 'auth:parent'], function(){
   Route::get('approval', 'Admin\ParentController@showApproval');
   Route::get('helpApproval', 'Admin\ParentController@approval');
   Route::get('helpRejected', 'Admin\ParentController@rejected');
+  Route::get('calculation', 'Admin\ParentController@showCalculation');
+  Route::get('help/money', 'Admin\ParentController@calculation');
   Route::get('set', 'Admin\ParentController@showSet');
   Route::post('set', 'Admin\ParentController@set');
 });
