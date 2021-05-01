@@ -33,7 +33,7 @@
           <a href="{{ action('Child\ChildController@showCancel')}}" role="button" class="btn btn-primary btn-block">お手伝いのキャンセル</a>
         </div>
         <div class="col-3 px-1 pb-1">
-          <a href="" role="button" class="btn btn-primary btn-block">お手伝い履歴</a>
+          <a href="{{ action('Child\ChildController@showHelpHistory') }}" role="button" class="btn btn-primary btn-block">お手伝い履歴</a>
         </div>
       </div>
     </div>

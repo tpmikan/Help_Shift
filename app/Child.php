@@ -59,6 +59,7 @@ class Child extends Authenticatable
         return $this->belongsTo('App\Set','set_base_year','base_year');
     }
     
+    //申請中のお手伝いの検索
     public function getUnappliedHelps()
     {
         $applied_help_ids = DB::table('child_help')
@@ -72,6 +73,7 @@ class Child extends Authenticatable
                 ->get();
     }
     
+    //お手伝いした日数の計算
     public function getHelpsCount($help_year, $help_month)
     {
         return DB::table('child_help')
@@ -81,5 +83,17 @@ class Child extends Authenticatable
                 ->whereYear('help_day', '=', $help_year)
                 ->whereMonth('help_day', '=', $help_month)
                 ->count();
+    }
+    
+    //お手伝い履歴の検索
+    public function getHelpHistory()
+    {
+        return DB::table('child_help')
+                ->leftJoin('helps', 'child_help.help_id', '=', 'helps.id')
+                ->where('child_id', '=', $this->id)
+                ->where('approval_status', '=', 2)
+                ->whereDate('help_day', '<', date('Ymd'))
+                ->select('help_day', 'help_content')
+                ->get();
     }
 }

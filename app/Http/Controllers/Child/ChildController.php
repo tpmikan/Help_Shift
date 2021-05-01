@@ -75,4 +75,14 @@ class ChildController extends Controller
         
         return redirect('/help/cancel');
     }
+    
+    //お手伝い履歴
+    public function showHelpHistory()
+    {
+        $child = Auth::user();
+        $helps_history = Child::find($child->id)->getHelpHistory();
+        
+        
+        return view('child.help_history', compact("helps_history"));
+    }
 }

@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth:child'], function(){
   Route::get('request', 'Child\ChildController@help');
   Route::get('help/cancel', 'Child\ChildController@showCancel');
   Route::get('cancel', 'Child\ChildController@cancel');
+  Route::get('help/history', 'Child\ChildController@showHelpHistory');
 });
   
   
