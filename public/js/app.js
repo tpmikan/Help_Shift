@@ -49885,7 +49885,7 @@ var today = new Date(); // 月末だとずれる可能性があるため、1日�
 var showDate = new Date(today.getFullYear(), today.getMonth(), 1); // 初期表示
 
 window.onload = function () {
-  showProcess(today);
+  showProcess(today, calendar);
 };
 
 $(function () {
