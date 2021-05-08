@@ -5,7 +5,7 @@ var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
 // 初期表示
 window.onload = function () {
-    showProcess(today, calendar);
+    showProcess(today);
 };
 
 $(function(){
