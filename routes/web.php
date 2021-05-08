@@ -20,6 +20,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'parent'], function(){
   Route::get('login', 'Admin\Auth\LoginController@showLoginForm')->name('parent.login');
   Route::post('login', 'Admin\Auth\LoginController@login');
+  Route::get('register', 'Admin\Auth\LoginController@showRegister')->name('parent.register');
+  Route::post('register', 'Admin\Auth\LoginController@register')->name('register');
 });
 
 Route::group(['prefix' => 'parent', 'middleware' => 'auth:parent'], function(){

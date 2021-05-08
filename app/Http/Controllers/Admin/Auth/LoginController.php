@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\ParentAdmin;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -48,6 +50,23 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     } 
+    
+    public function showRegister()
+    {
+        return view('parent.auth.register');
+    }
+    
+    public function register(Request $request)
+    {
+        $parent = new ParentAdmin;
+        $parent->name = $request->input('name');
+        $parent->email = $request->input('email');
+        $parent->password = Hash::make($request->input('password'));
+        
+        $parent->save();
+        
+        return redirect('/parent/login');
+    }
     
     public function logout(Request $request)
     {

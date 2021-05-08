@@ -1,6 +1,9 @@
 @extends('layouts.parentapp')
 
 @section('content')
+
+<a href="{{ route('parent.register') }}">Register</a>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
