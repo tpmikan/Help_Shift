@@ -56,18 +56,6 @@ class LoginController extends Controller
         return view('parent.auth.register');
     }
     
-    public function register(Request $request)
-    {
-        $parent = new ParentAdmin;
-        $parent->name = $request->input('name');
-        $parent->email = $request->input('email');
-        $parent->password = Hash::make($request->input('password'));
-        
-        $parent->save();
-        
-        return redirect('/parent/login');
-    }
-    
     public function logout(Request $request)
     {
         $this->guard()->logout();

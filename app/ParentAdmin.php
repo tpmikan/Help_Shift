@@ -40,4 +40,10 @@ class ParentAdmin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime'
     ];
+    
+    public static $rules = array (
+      'name' => 'required',
+      'email' => 'required',
+      'password' => 'required'
+    );
 }
