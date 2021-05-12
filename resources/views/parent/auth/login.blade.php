@@ -11,7 +11,7 @@
                 <div class="card-header">{{ __('Parent Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('parent.login') }}">
+                    <form action="{{ route('parent.login') }}" method="post">
                         @csrf
 
                         <div class="form-group row">
