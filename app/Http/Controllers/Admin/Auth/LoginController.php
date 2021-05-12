@@ -46,11 +46,6 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    } 
-    
     public function showRegister()
     {
         return view('parent.auth.register');
@@ -61,7 +56,7 @@ class LoginController extends Controller
         $this->guard()->logout();
 
         $request->session()->invalidate();
-dd(\Auth::user());
+
         return $this->loggedOut($request) ?: redirect('/parent/login');
     }
 }
