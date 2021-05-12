@@ -46,12 +46,6 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function login(Request $request)
-    {
-        
-dd(\Auth::user());
-    }
-    
     public function showRegister()
     {
         return view('parent.auth.register');
