@@ -17,8 +17,8 @@ class ParentController extends Controller
     //
     public function __construct()
     {
+        dd(\Auth::user());
         $this->middleware('auth:parent');
-        dd(Auth::user());
     }
     
     public function index() 
@@ -29,7 +29,6 @@ class ParentController extends Controller
             $child->set_base_year = parent::gradeCalculation($child->birthday);
             $child->save();
         }
-        
         return view('parent.home');
     }
     

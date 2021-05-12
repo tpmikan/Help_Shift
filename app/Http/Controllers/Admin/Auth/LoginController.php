@@ -33,7 +33,6 @@ class LoginController extends Controller
     
     public function showLoginForm()
     {
-        dd(\Auth::user());
         return view('parent.auth.login');
     }
     
