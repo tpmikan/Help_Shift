@@ -10,13 +10,15 @@ use App\Help;
 use App\ChildHelp;
 use App\Set;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class ParentController extends Controller
 {
     //
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:parent');
+        dd(Auth::user());
     }
     
     public function index() 
