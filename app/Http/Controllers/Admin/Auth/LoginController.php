@@ -33,12 +33,13 @@ class LoginController extends Controller
     
     public function showLoginForm()
     {
-    return view('parent.auth.login');
+        dd(\Auth::user());
+        return view('parent.auth.login');
     }
     
     protected function guard()
     {
-    return \Auth::guard('parent'); //guardを指定
+        return \Auth::guard('parent'); //guardを指定
     }
     
     /**
