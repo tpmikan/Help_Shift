@@ -41,6 +41,10 @@ class LoginController extends Controller
         return \Auth::guard('parent'); //guardを指定
     }
     
+    public function username()
+    {
+        return 'name'; //　nameに変更
+    }
     /**
      * Create a new controller instance.
      *
@@ -90,7 +94,7 @@ class LoginController extends Controller
     protected function validateLogin(Request $request)
     {
         $request->validate([
-            $this->name() => 'required|string',
+            $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
     }

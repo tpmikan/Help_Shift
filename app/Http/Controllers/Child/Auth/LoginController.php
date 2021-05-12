@@ -39,7 +39,10 @@ class LoginController extends Controller
     return \Auth::guard('child'); //guardを指定
     }
     
-    
+    public function username()
+    {
+        return 'name'; //　nameに変更
+    }
     /**
      * Create a new controller instance.
      *
