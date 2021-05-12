@@ -17,7 +17,6 @@ class ParentController extends Controller
     //
     public function __construct()
     {
-        dd(\Auth::user());
         $this->middleware('auth:parent');
     }
     
