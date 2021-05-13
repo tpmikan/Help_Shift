@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <a href="{{ action('Admin\Auth\LoginController@showLoginForm') }}" class="text-white">■</a>
+    <a href="{{ action('Admin\Auth\LoginController@showLoginForm') }}" class="text-black">■</a>
 
 <div class="container">
     <div class="row justify-content-center">
