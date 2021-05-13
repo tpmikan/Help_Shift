@@ -2,13 +2,13 @@
 
 @section('content')
 
-<a href="{{ route('parent.register') }}">Register</a>
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Parent Login') }}</div>
+                <a href="{{ route('parent.register') }}" class="py-3 px-3 text-right">新規登録</a>
 
                 <div class="card-body">
                     <form action="{{ action('Admin\Auth\LoginController@login') }}" method="post">
