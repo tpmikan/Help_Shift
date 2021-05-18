@@ -58,6 +58,7 @@ class ChildController extends Controller
         $child_helps = ChildHelp::all();
         $unapproveds = [];
         
+        //未承認のお手伝いを取得
         foreach($child_helps as $help){
             if($help->approval_status == 1){
                 $unapproveds[] = $help;

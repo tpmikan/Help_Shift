@@ -19,8 +19,8 @@ class CreateChildrenTable extends Migration
             $table->string('name');
             $table->string('password');
             $table->date('birthday');
-            $table->integer('basic_price');
-            $table->integer('reward_price');
+            $table->integer('basic_price'); //基本お小遣い
+            $table->integer('reward_price'); //お手伝い単価
             $table->rememberToken();
             $table->timestamps();
         });

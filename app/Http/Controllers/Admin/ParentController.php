@@ -49,6 +49,7 @@ class ParentController extends Controller
     {
         $this->validate($request, Child::$rules);
         
+        //子供の追加
         $child = new Child;
         $child->name = $request->input('name');
         $child->password = Hash::make($request->input('password'));
@@ -102,6 +103,7 @@ class ParentController extends Controller
         
         $help_content = $request->input('help_content');
         
+        //お手伝いの始めの日と終わりの日を指定してまとめて作成
         for($day = new Carbon($request->help_start); $day <= new Carbon($request->help_end); $day->addDay()){
             Help::create(["help_day"=>$day, "help_content"=>$help_content]);    
         }         
@@ -133,6 +135,7 @@ class ParentController extends Controller
         $child_helps = ChildHelp::all();
         $unapproveds = [];
         
+        //未承認のお手伝いを取得
         foreach($child_helps as $help){
             if($help->approval_status == 1){
                 $unapproveds[] = $help;

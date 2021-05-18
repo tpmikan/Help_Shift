@@ -41,7 +41,7 @@ class LoginController extends Controller
     
     public function username()
     {
-        return 'name'; //　nameに変更
+        return 'name'; //　ログイン方法をnameに変更
     }
     /**
      * Create a new controller instance.
